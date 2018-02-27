@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  server:
+    image: rudder_server
+    environment:
+      HOSTNAME: 'rudder'
+    ports:
+      - 8081:8081
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: overlay
